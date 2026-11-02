@@ -33,6 +33,11 @@ public class WebfluxApirestApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		/**
+		 * Cargamos datos de prueba en la base de datos, eliminando primero las colecciones existentes.
+		 */
+
 		mongoTemplate.dropCollection("products").subscribe();
 		mongoTemplate.dropCollection("categories").subscribe();
 
